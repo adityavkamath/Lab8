@@ -1,0 +1,244 @@
+.reminder-app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background-color: #fff;
+}
+
+.app-title {
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.task-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.task-input {
+  flex: 3;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.date-input {
+  flex: 2;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.task-input:focus, .date-input:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+}
+
+.add-button {
+  flex: 1;
+  background-color: #646cff;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: #535bf2;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-button {
+  background-color: #f1f5f9;
+  color: #4b5563;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-button:hover {
+  background-color: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+.filter-button.active {
+  background-color: #646cff;
+  color: white;
+  border-color: #646cff;
+}
+
+/* Task List */
+.task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.75rem;
+  background-color: #f8fafc;
+  border-left: 4px solid #646cff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  border-left-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+.task-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-details {
+  flex: 1;
+}
+
+.task-name {
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.task-date {
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+.completed .task-name {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.toggle-button {
+  background-color: #f1f5f9;
+  color: #4b5563;
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-button:hover {
+  background-color: #e2e8f0;
+}
+
+.completed .toggle-button {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  padding: 2rem;
+  font-style: italic;
+}
+
+@media (max-width: 640px) {
+  .task-form {
+    flex-direction: column;
+  }
+  
+  .add-button {
+    width: 100%;
+  }
+  
+  .task-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .toggle-button {
+    width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .reminder-app {
+    background-color: #1e293b;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .app-title {
+    color: #e2e8f0;
+  }
+  
+  .task-input, .date-input {
+    background-color: #334155;
+    border-color: #475569;
+    color: #f1f5f9;
+  }
+  
+  .filter-button {
+    background-color: #334155;
+    color: #e2e8f0;
+    border-color: #475569;
+  }
+  
+  .filter-button:hover {
+    background-color: #475569;
+  }
+  
+  .task-item {
+    background-color: #334155;
+  }
+  
+  .task-item.completed {
+    background-color: #064e3b;
+  }
+  
+  .task-name {
+    color: #f1f5f9;
+  }
+  
+  .task-date {
+    color: #cbd5e1;
+  }
+  
+  .toggle-button {
+    background-color: #475569;
+    color: #e2e8f0;
+    border-color: #64748b;
+  }
+  
+  .toggle-button:hover {
+    background-color: #64748b;
+  }
+}
